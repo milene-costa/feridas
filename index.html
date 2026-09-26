@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análise de Feridas Emocionais e Recursos</title>
+  <style>
+    :root {
+      --primary-color: #6b4c9a;
+      --secondary-color: #d4a373;
+      --bg-color: #f9f8f6;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      color: var(--primary-color);
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 25px;
+      gap: 10px;
+    }
+
+    .tab-btn {
+      padding: 12px 24px;
+      border: 2px solid var(--primary-color);
+      background-color: transparent;
+      color: var(--primary-color);
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .tab-btn.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .section-block {
+      background-color: #f3f0f7;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 5px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 0.95em;
+      line-height: 1.4;
+    }
+
+    .checkbox-label input {
+      margin-top: 3px;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary-color);
+    }
+
+    .user-info {
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #1eb857;
+    }
+  </style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h1>Análise Sistêmica e Emocional</h1>
+  <p style="text-align: center; color: #666;">Assinale apenas as frases que MAIS fizerem sentido para você.</p>
+
+  <!-- Navegação das Abas -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('teste1')">Teste 1: Dores Predominantes</button>
+    <button class="tab-btn" onclick="switchTab('teste2')">Teste 2: Crenças Positivas</button>
+  </div>
+
+  <form id="quizForm">
+    
+    <!-- TESTE 1: FERIDAS / DORES -->
+    <div id="teste1" class="tab-content active">
+      <h2>Teste 1 - Mapeamento das Feridas Emocionais</h2>
+
+      <!-- Rejeição -->
+      <div class="section-block">
+        <div class="section-title">Nível Sobrevivência - Dor: Rejeição</div>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" name="dor_rejeicao"> Você/Ele(a) não me ama.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_rejeicao"> Não consigo começar algo porque eu já sei que não vai dar certo.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_rejeicao"> Sempre fui a ovelha negra da família.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_rejeicao"> Vivo no mundo das ideias / Penso muito mas não tenho força para terminar de fazer.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_rejeicao"> Só consigo fazer o que me dá prazer.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_rejeicao"> Tenho dificuldade de aterrar, vivo no espiritual.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_rejeicao"> Não vou me relacionar muito profundamente, pois irão me tirar do meu mundo.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_rejeicao"> Não tenho necessidade de ter uma família ou uma família tradicional.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_rejeicao"> Não consigo me manter.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_rejeicao"> Não mereço me manter.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_rejeicao"> Eu sou um erro, um incômodo.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_rejeicao"> Eu estou sempre procurando um lugar para me encaixar.</label>
+        </div>
+      </div>
+
+      <!-- Abandono -->
+      <div class="section-block">
+        <div class="section-title">Nível Segurança - Dor: Abandono</div>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" name="dor_abandono"> Você/ Ele(a) não me quer mais.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_abandono"> Se eu for completo(a), não terei o amor que eu preciso.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_abandono"> Preciso estar coitadinha para ter pessoas por perto.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_abandono"> Eu capricho exaustivamente em algo, para receber elogios.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_abandono"> Odeio me sentir só, tenho medo de estar só.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_abandono"> Eu amo mais o outro do que a mim mesma e faço qualquer coisa para não perder essa companhia.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_abandono"> Preciso de alguém que prove o seu amor todos os dias.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_abandono"> Quando eu amo, eu sufoco e não consigo controlar isso.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_abandono"> Desenvolvo muito amor ou muito ranço por uma pessoa.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_abandono"> Sempre tenho o outro como a minha razão existencial.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_abandono"> Meus bens geralmente são do marido ou pais pois não consigo administrar.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_abandono"> Eu não sou amada, não sou suficiente.</label>
+        </div>
+      </div>
+
+      <!-- Manipulação -->
+      <div class="section-block">
+        <div class="section-title">Nível Social - Dor: Manipulação</div>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" name="dor_manipulacao"> Todos querem me dominar, me manipular, me enganar.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_manipulacao"> Prefiro não fazer nada direito, para que os outros não tirem proveito de mim.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_manipulacao"> Todos se aproveitam de mim.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_manipulacao"> Só tenho auto estima alta, quando tenho dinheiro e posses.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_manipulacao"> As pessoas só me querem quando eu tenho algo a oferecer.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_manipulacao"> Eles só vêm quando precisam de mim.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_manipulacao"> Eu procrastino porque acho que outros poderão se beneficiar.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_manipulacao"> Deus escolhe. Existem os escolhidos e "os outros".</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_manipulacao"> Eu "Racionalizo" demais o amor.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_manipulacao"> Estou sempre conectando situações e pessoas.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_manipulacao"> Meus bens e minhas posses definem quem eu sou.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_manipulacao"> Eu me sinto sempre enganado(a), passado(a) pra trás.</label>
+        </div>
+      </div>
+
+      <!-- Humilhação -->
+      <div class="section-block">
+        <div class="section-title">Nível Autoestima - Dor: Humilhação (Vergonha)</div>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" name="dor_humilhacao"> Ele(a) não me valoriza, me humilha, me expõe.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_humilhacao"> Se eu não ficar esperto irão descobrir algum erro meu.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_humilhacao"> Todos tiram proveito de mim.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_humilhacao"> Não sei dizer não.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_humilhacao"> Sou mais lento e mais analítico (preciso pensar e repensar para não errar).</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_humilhacao"> Se precisar, eu me humilho.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_humilhacao"> Irei me ajoelhar e me martirizar; quanto mais sofrimento, mais mereço bênçãos.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_humilhacao"> Eu "engulo sapos" até explodir e exagerar.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_humilhacao"> Eu vou sofrer calado(a) para não incomodar.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_humilhacao"> Tenho muitas conversas internas.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_humilhacao"> Não me arrisco muito porque se eu falhar os outros irão rir de mim.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_humilhacao"> Eu não sou visto(a), reconhecido(a) ou valorizado(a).</label>
+        </div>
+      </div>
+
+      <!-- Traição -->
+      <div class="section-block">
+        <div class="section-title">Nível Auto-realização - Dor: Traição</div>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" name="dor_traicao"> Você me troca.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_traicao"> Se eu não ficar esperto, irão me substituir.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_traicao"> Estou tão sobrecarregada que meu corpo e minha mente travam.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_traicao"> Executor máximo, extremamente perfeccionista.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_traicao"> Sou exigente com o mundo, mas cobro mais de mim mesmo(a).</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_traicao"> Se for pra esperar e receber errado, eu mesmo(a) faço.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_traicao"> Faço força braçal e estou à frente de tudo.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_traicao"> Não posso confiar muito.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_traicao"> Preciso provar que sou o(a) melhor.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_traicao"> Sem querer sou mandão/mandona e imponho para sair perfeito.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_traicao"> Tenho orgulho que tudo o que conquistei foi com muito sacrifício.</label>
+          <label class="checkbox-label"><input type="checkbox" name="dor_traicao"> Sempre foco na performance e em provar que sou a melhor.</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTE 2: CRENÇAS POSITIVAS / RECURSOS -->
+    <div id="teste2" class="tab-content">
+      <h2>Teste 2 - Mapeamento dos Recursos e Crenças Positivas</h2>
+
+      <!-- Rejeição em Autoamor -->
+      <div class="section-block">
+        <div class="section-title">Transformando Rejeição em Autoamor</div>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoamor"> Eu sou desejado(a).</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoamor"> Eu consigo me manter / posso confiar em mim mesmo(a).</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoamor"> Uso o mundo das ideias para ter inspiração, criatividade e agir.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoamor"> Eu mereço toda sorte de bênçãos, posses e recursos.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoamor"> O que eu tenho é meu, gerado pelo meu esforço.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoamor"> Eu sou a pessoa certa, no momento certo.</label>
+        </div>
+      </div>
+
+      <!-- Abandono em Autosuficiência -->
+      <div class="section-block">
+        <div class="section-title">Transformando Abandono em Autosuficiência</div>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" name="rec_autosuficiencia"> Eu sou amada, eu sou suficiente.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autosuficiencia"> Eu posso ser completa e ainda assim ser amada.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autosuficiencia"> Eu posso parar de sofrer e mesmo assim ter apoio.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autosuficiencia"> Tudo o que faço com zelo é perfeito, independente da opinião alheia.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autosuficiencia"> Eu me completo.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autosuficiencia"> Eu posso chorar e mesmo assim continuo sendo forte.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autosuficiencia"> Minha maior arma de convencimento é a minha autossuficiência.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autosuficiencia"> Eu amo mais a mim e a mim primeiro.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autosuficiencia"> Eu sinto amor, mesmo sem receber provas toda hora.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autosuficiencia"> Eu amo e deixo a pessoa livre.</label>
+        </div>
+      </div>
+
+      <!-- Manipulação em Estratégia -->
+      <div class="section-block">
+        <div class="section-title">Transformando Manipulação em Estratégia</div>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" name="rec_estrategia"> Todos nós podemos ser úteis.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_estrategia"> Eu dou o meu melhor, visando o meu melhor.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_estrategia"> Eu sei me defender.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_estrategia"> As pessoas me querem pelo que eu sou.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_estrategia"> As pessoas certas vêm quando preciso.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_estrategia"> Eu posso "Racionalizar", mas não tenho como prever as atitudes de ninguém.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_estrategia"> Eu abro as cartas na mesa porque não existem segundas intenções.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_estrategia"> Eu sou valiosa antes de pertencer a alguma coisa.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_estrategia"> As pessoas me tratam com verdade.</label>
+        </div>
+      </div>
+
+      <!-- Vergonha em Autoconfiança -->
+      <div class="section-block">
+        <div class="section-title">Transformando Vergonha em Autoconfiança</div>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoconfianca"> Eu sou valorizada.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoconfianca"> Eu me permito errar.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoconfianca"> Eu sei dizer não sem sofrer.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoconfianca"> Eu sei me defender.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoconfianca"> Eu sigo o meu ritmo.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoconfianca"> Eu confio que farei tudo certo.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoconfianca"> Eu tenho a minha dignidade. Eu sei dar limite!</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoconfianca"> Eu tenho coragem para arriscar coisas novas.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoconfianca"> Eu faço as pazes com o erro. Eu me perdoo.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_autoconfianca"> Eu aceito o meu processo.</label>
+        </div>
+      </div>
+
+      <!-- Traição em Confiança -->
+      <div class="section-block">
+        <div class="section-title">Transformando Traição em Confiança</div>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" name="rec_confianca"> Eu sou única.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_confianca"> Eu posso confiar.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_confianca"> Eu posso descansar.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_confianca"> Eu posso relaxar.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_confianca"> Se eu fizer uma pausa o mundo estará em ordem.</label>
+          <label class="checkbox-label"><input type="checkbox" name="rec_confianca"> Não existe ninguém melhor ou pior que eu, pois sou única.</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Informações do Usuário & Envio -->
+    <div class="user-info">
+      <h3>Receber Leitura Personalizada</h3>
+      <label for="userName">Seu Nome:</label>
+      <input type="text" id="userName" class="input-field" placeholder="Digite seu nome completo" required>
+
+      <button type="button" class="submit-btn" onclick="sendToWhatsApp()">
+         Enviar Resultado e Receber Leitura no WhatsApp
+      </button>
+    </div>
+
+  </form>
+</div>
+
+<script>
+  // Troca de Abas
+  function switchTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  // Função para processar os resultados e direcionar ao WhatsApp
+  function sendToWhatsApp() {
+    const name = document.getElementById('userName').value.trim();
+    if (!name) {
+      alert("Por favor, preencha o seu nome antes de enviar.");
+      return;
+    }
+
+    // Configuração do WhatsApp do Terapeuta (Substitua abaixo)
+    const phone = "5500000000000"; // INSIRA SEU NUMERO COM DDD E DDI AQUI (Ex: 5534999999999)
+
+    // Contagem Teste 1 (Dores)
+    const dores = {
+      "Rejeição": document.querySelectorAll('input[name="dor_rejeicao"]:checked').length,
+      "Abandono": document.querySelectorAll('input[name="dor_abandono"]:checked').length,
+      "Manipulação": document.querySelectorAll('input[name="dor_manipulacao"]:checked').length,
+      "Humilhação": document.querySelectorAll('input[name="dor_humilhacao"]:checked').length,
+      "Traição": document.querySelectorAll('input[name="dor_traicao"]:checked').length
+    };
+
+    // Contagem Teste 2 (Recursos)
+    const recursos = {
+      "Autoamor": document.querySelectorAll('input[name="rec_autoamor"]:checked').length,
+      "Autosuficiência": document.querySelectorAll('input[name="rec_autosuficiencia"]:checked').length,
+      "Estratégia": document.querySelectorAll('input[name="rec_estrategia"]:checked').length,
+      "Autoconfiança": document.querySelectorAll('input[name="rec_autoconfianca"]:checked').length,
+      "Confiança": document.querySelectorAll('input[name="rec_confianca"]:checked').length
+    };
+
+    // Ordenar Dores (Ranking)
+    const rankingDores = Object.entries(dores).sort((a, b) => b[1] - a[1]);
+    // Ordenar Recursos (Ranking)
+    const rankingRecursos = Object.entries(recursos).sort((a, b) => b[1] - a[1]);
+
+    // Montar a Mensagem
+    let text = `Olá! Meu nome é *${name}* e acabei de responder aos Testes de Feridas Emocionais e Recursos.\n\n`;
+    
+    text += `📌 *RANKING DAS FERIDAS (DORES):*\n`;
+    rankingDores.forEach(([ferida, pts], index) => {
+      text += `${index + 1}º ${ferida}: ${pts} ponto(s)\n`;
+    });
+
+    text += `\n✨ *RANKING DOS RECURSOS (CRENÇAS POSITIVAS):*\n`;
+    rankingRecursos.forEach(([recurso, pts], index) => {
+      text += `${index + 1}º ${recurso}: ${pts} ponto(s)\n`;
+    });
+
+    text += `\nGostaria de receber a minha leitura e saber como trabalhar minhas feridas predominantes: *${rankingDores[0][0]}* e *${rankingDores[1][0]}*.`;
+
+    // Encaminhar para o WhatsApp
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/${phone}?text=${encodedText}`;
+    window.open(whatsappUrl, '_blank');
+  }
+</script>
+
+</body>
+</html>
